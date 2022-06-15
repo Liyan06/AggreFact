@@ -12,7 +12,8 @@ The dataset can be found in the `data` folder. `aggre_fact_sota.csv` is a subset
 
 |Col. name | Description |
 |--|--|
-| origin | Summarization dataset. Either *cnndm* or *xsum*. |
+|dataset|Name of the original annotated dataset.|
+|origin | Summarization dataset. Either *cnndm* or *xsum*. |
 |id| Document id.|
 |doc| Input article. |
 |summary| model generated summary.|
