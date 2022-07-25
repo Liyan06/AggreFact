@@ -22,3 +22,9 @@ The dataset can be found in the `data` folder. `aggre_fact_sota.csv` is a subset
 |cut| Either *val* or *test*.|
 |*system*_score| The output score from a *factuality system*.|
 |*system*_label| The binary factual consistency label based on the score of the factuality system. Only examples in the *test* set have labels. Labels are determined under the *threshold-per-dataset* setting.
+
+## Unified Error Types
+
+We unified unique error type taxonomies from XSumFaith, FRANK, Goyal21 and CLIFF under `data/error_type_mapping`. More details can be found in Section 4 of the paper.
+
+<img src="images/error_mapping.png" width="600">
