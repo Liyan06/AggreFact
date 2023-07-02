@@ -1,10 +1,18 @@
 # Understanding Factual Errors in Summarization: Errors, Summarizers, Datasets, Error Detectors
 
+## Announcement
+
+Our paper is accepted to ACL 2023! Please consider citing our paper if you find it useful.
+
+## TL;DR
+
+Reported results on standard summarization factuality benchmarks can be misleading. Factuality metrics, even ChatGPT-based, don’t actually improve on more recent summarizers!
+
 ## Abstract
 
-The propensity of abstractive summarization systems to make factual errors has been the subject of significant study, including work on models to detect factual errors and annotation of errors in current systems' outputs. However, the ever-evolving nature of summarization systems, error detectors, and annotated benchmarks make factuality evaluation a moving target; it is hard to get a clear picture of how techniques compare. In this work, we collect labeled factuality errors from across nine datasets of annotated summary outputs and stratify them in a new way, focusing on what kind of base summarization model was used. To support finer-grained analysis, we unify the labeled error types into a single taxonomy and project each of the datasets' errors into this shared labeled space. We then contrast five state-of-the-art error detection methods on this benchmark. Our findings show that benchmarks built on modern summary outputs (those from pre-trained models) show significantly different results than benchmarks using pre-Transformer models. Furthermore, no one factuality technique is superior in all settings or for all error types, suggesting that system developers should take care to choose the right system for their task at hand.
+The propensity of abstractive summarization models to make factual errors has been studied extensively, including design of metrics to detect factual errors and annotation of errors in current systems’ outputs. However, the ever-evolving nature of summarization systems, metrics, and annotated benchmarks makes factuality evaluation a moving target, and drawing clear comparisons among metrics has become increasingly difficult. In this work, we aggregate factuality error annotations from nine existing datasets and stratify them according to the underlying summarization model. We compare performance of state-of-the-art factuality metrics, including recent ChatGPT-based metrics, on this stratified benchmark and show that their performance varies significantly across different types of summarization models. Critically, our analysis shows that much of the recent improvement in the factuality detection space has been on summaries from older (pre-Transformer) models instead of more relevant recent summarization models. We further perform a finer-grained analysis per error-type and find similar performance variance across error types for different factuality metrics. Our results show that no one metric is superior in all settings or for all error types, and we provide recommendations for best practices given these insights.
 
-Please see our full paper [here](https://arxiv.org/pdf/2205.12854v1.pdf).
+Please check our latest paper version [here](https://arxiv.org/pdf/2205.12854.pdf).
 
 ## AggreFact Benchmark
 
@@ -22,6 +30,12 @@ The dataset can be found in the `data` folder. `aggre_fact_sota.csv` is a subset
 |cut| Either *val* or *test*.|
 |*system*_score| The output score from a *factuality system*.|
 |*system*_label| The binary factual consistency label based on the score of the factuality system. Only examples in the *test* set have labels. Labels are determined under the *threshold-per-dataset* setting.
+
+The new csv file containing the results from chatgpt based metrics will be released shortly.
+
+## Main Result
+
+<img src="images/model_compare.png" width="600">
 
 ## Unified Error Types
 
